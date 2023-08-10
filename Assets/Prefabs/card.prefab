@@ -422,6 +422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: -1676103930886485940}
   audioSource: {fileID: 2779981135227211913}
+  backColor: {fileID: 644387180284529390}
 --- !u!114 &6405676398167366013
 MonoBehaviour:
   m_ObjectHideFlags: 0
