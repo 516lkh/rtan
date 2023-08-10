@@ -28,17 +28,22 @@ public class timeTxt : MonoBehaviour
         else if (time < 20f)
         {
             GetComponent<RectTransform>().position
-                = new Vector3(x + Random.Range(-2, 2), y + Random.Range(-2, 2), 0);
-        }
-        else if (time < 25f)
-        {
-            GetComponent<RectTransform>().position
-                = new Vector3(x + Random.Range(-5, 5), y + Random.Range(-5, 5), 0);
+                = new Vector3(x + Random.Range(-1, 1), y + Random.Range(-1, 1), 0);
         }
         else if (time < 30f)
         {
             GetComponent<RectTransform>().position
-                = new Vector3(x + Random.Range(-15, 15), y + Random.Range(-15, 15), 0);
+                = new Vector3(x + Random.Range(-3, 3), y + Random.Range(-3, 3), 0);
+        }
+        else if (time < 40f)
+        {
+            GetComponent<RectTransform>().position
+                = new Vector3(x + Random.Range(-5, 5), y + Random.Range(-5, 5), 0);
+        }
+        else if (time < 50f)
+        {
+            GetComponent<RectTransform>().position
+                = new Vector3(x + Random.Range(-10, 10), y + Random.Range(-10, 10), 0);
         }
     }
 }

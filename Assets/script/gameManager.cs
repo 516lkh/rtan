@@ -65,7 +65,7 @@ public class gameManager : MonoBehaviour
         time += Time.deltaTime;
         timeTxt.text = time.ToString("N2");
 
-        if (time > 30.0f)
+        if (time > 60.0f)
         {
             backgroundMusic.Pause();
             failTxt.SetActive(true);
