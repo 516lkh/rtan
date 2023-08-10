@@ -5,6 +5,7 @@ using UnityEngine;
 public class card : MonoBehaviour
 {
     public Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,18 +20,21 @@ public class card : MonoBehaviour
 
     public void openCard()
     {
-        anim.SetBool("isOpen", true);
-        transform.Find("front").gameObject.SetActive(true);
-        transform.Find("back").gameObject.SetActive(false);
+        if (gameManager.I.isClick == true)
+        {
+            anim.SetBool("isOpen", true);
+            transform.Find("front").gameObject.SetActive(true);
+            transform.Find("back").gameObject.SetActive(false);
 
-        if (gameManager.I.firstCard == null)
-        {
-            gameManager.I.firstCard = gameObject;
-        }
-        else
-        {
-            gameManager.I.secondCard = gameObject;
-            gameManager.I.isMatched();
+            if (gameManager.I.firstCard == null)
+            {
+                gameManager.I.firstCard = gameObject;
+            }
+            else
+            {
+                gameManager.I.secondCard = gameObject;
+                gameManager.I.isMatched();
+            }
         }
     }
 
@@ -39,6 +43,7 @@ public class card : MonoBehaviour
 
     public void destroyCard()
     {
+        gameManager.I.isClick = true;
         Invoke("destroyCardInvoke", 1.0f);
     }
 
@@ -60,5 +65,7 @@ public class card : MonoBehaviour
         anim.SetBool("isOpen", false);
         transform.Find("back").gameObject.SetActive(true);
         transform.Find("front").gameObject.SetActive(false);
+        gameManager.I.isClick = true;
     }
+
 }

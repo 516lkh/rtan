@@ -21,6 +21,10 @@ public class gameManager : MonoBehaviour
     public GameObject firstCard;
     public GameObject secondCard;
 
+    public bool isClick = true;
+    public Text matchNumTxt;
+    private int matchNum = 0;
+
 
     float time = 0.0f;
     int cardsLeft;
@@ -66,6 +70,9 @@ public class gameManager : MonoBehaviour
 
     public void isMatched()
     {
+        isClick = false;
+        matchNum += 1;
+        matchNumTxt.text = ("      ¸ÅÄ¡È½¼ö " + matchNum.ToString() + "È¸");
         string firstCardImage 
             = firstCard.transform.Find("front").GetComponent<SpriteRenderer>().sprite.name;
         string secondCardImage 
