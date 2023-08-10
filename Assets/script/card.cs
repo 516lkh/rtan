@@ -25,19 +25,6 @@ public class card : MonoBehaviour
     {
         if (gameManager.I.isClick == true)
         {
-            anim.SetBool("isOpen", true);
-            transform.Find("front").gameObject.SetActive(true);
-            transform.Find("back").gameObject.SetActive(false);
-
-            if (gameManager.I.firstCard == null)
-            {
-                gameManager.I.firstCard = gameObject;
-            }
-            else
-            {
-                gameManager.I.secondCard = gameObject;
-                gameManager.I.isMatched();
-            }
             audioSource.Play();
             anim.SetBool("isOpen", true);
             transform.Find("front").gameObject.SetActive(true);

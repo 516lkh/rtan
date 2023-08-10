@@ -354,6 +354,8 @@ GameObject:
   - component: {fileID: 1221618573}
   - component: {fileID: 1221618575}
   - component: {fileID: 1221618574}
+  - component: {fileID: 1221618576}
+  - component: {fileID: 1221618577}
   m_Layer: 5
   m_Name: timeTxt
   m_TagString: Untagged
@@ -423,6 +425,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1221618572}
   m_CullTransparentMesh: 1
+--- !u!95 &1221618576
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221618572}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9bbb3eb5cf291ad498fb4aba738c1f67, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1221618577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221618572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 740a952722af26740b93f21655bf69a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1290474547
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,9 +579,9 @@ MonoBehaviour:
   failTxt: {fileID: 1698198432}
   firstCard: {fileID: 0}
   secondCard: {fileID: 0}
-  backgroundMusic: {fileID: 0}
-  winSound: {fileID: 0}
-  failSound: {fileID: 0}
+  backgroundMusic: {fileID: 1514901534}
+  winSound: {fileID: 1514901535}
+  failSound: {fileID: 1514901536}
   isClick: 1
   matchNumTxt: {fileID: 1798712861}
 --- !u!82 &1514901534
