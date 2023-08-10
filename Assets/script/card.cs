@@ -75,7 +75,6 @@ public class card : MonoBehaviour
         anim.SetBool("isOpen", false);
         transform.Find("back").gameObject.SetActive(true);
         transform.Find("front").gameObject.SetActive(false);
-        gameManager.I.timePlus.SetActive(false);
         Invoke("closeflip", 0.15f);
         gameManager.I.isClick = true;
     }
