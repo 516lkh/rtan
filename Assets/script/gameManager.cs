@@ -13,7 +13,6 @@ public class gameManager : MonoBehaviour
         I = this;
     }
 
-
     public Text timeTxt;
     public GameObject card;
     public GameObject endTxt;
@@ -27,10 +26,14 @@ public class gameManager : MonoBehaviour
     public bool isClick = true;
     public Text matchNumTxt;
     private int matchNum = 0;
-    public GameObject timePlus;
+    public Text scoreTxt;
+    public GameObject finalScoreTxt;
+    public Text finalscoreTxt;
 
+    public Animator anim;
 
     float time = 0.0f;
+    float score;
     int cardsLeft;
 
     // Start is called before the first frame update
@@ -65,6 +68,15 @@ public class gameManager : MonoBehaviour
     {
         time += Time.deltaTime;
         timeTxt.text = time.ToString("N2");
+        score = (60 - time) / matchNum;
+        if (matchNum == 0)
+        {
+            scoreTxt.text = ("점수 : 0");
+        }
+        else
+        {
+            scoreTxt.text = ("점수 : " + score.ToString());
+        }
 
         if (time > 60.0f)
         {
@@ -80,7 +92,7 @@ public class gameManager : MonoBehaviour
     {
         isClick = false;
         matchNum += 1;
-        matchNumTxt.text = ("      매치횟수 " + matchNum.ToString() + "회");
+        matchNumTxt.text = ("매치횟수 " + matchNum.ToString() + "회");
         string firstCardImage 
             = firstCard.transform.Find("front").GetComponent<SpriteRenderer>().sprite.name;
         string secondCardImage 
@@ -96,16 +108,18 @@ public class gameManager : MonoBehaviour
             Debug.Log(cardsLeft);
             if (cardsLeft == 0)
             {
+                finalscoreTxt.text=scoreTxt.text;
                 backgroundMusic.Pause();
                 winSound.Play();
                 endTxt.SetActive(true);
+                finalScoreTxt.SetActive(true);
                 Time.timeScale = 0.0f;
             }
         }
         else
         {
             time += 1;
-            timePlus.SetActive(true);
+            anim.SetTrigger("timePlus");
             firstCard.GetComponent<card>().closeCard();
             secondCard.GetComponent<card>().closeCard();
         }
