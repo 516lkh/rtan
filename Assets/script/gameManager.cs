@@ -34,6 +34,7 @@ public class gameManager : MonoBehaviour
 
     float time = 0.0f;
     float score;
+    public float time = 0.0f;
     int cardsLeft;
 
     // Start is called before the first frame update
@@ -71,11 +72,11 @@ public class gameManager : MonoBehaviour
         score = (60 - time) / matchNum;
         if (matchNum == 0)
         {
-            scoreTxt.text = ("Á¡¼ö : 0");
+            scoreTxt.text = ("ÃÂ¡Â¼Ã¶ : 0");
         }
         else
         {
-            scoreTxt.text = ("Á¡¼ö : " + score.ToString());
+            scoreTxt.text = ("ÃÂ¡Â¼Ã¶ : " + score.ToString());
         }
 
         if (time > 60.0f)
@@ -92,7 +93,7 @@ public class gameManager : MonoBehaviour
     {
         isClick = false;
         matchNum += 1;
-        matchNumTxt.text = ("¸ÅÄ¡È½¼ö " + matchNum.ToString() + "È¸");
+        matchNumTxt.text = ("Â¸Ã…Ã„Â¡ÃˆÂ½Â¼Ã¶ " + matchNum.ToString() + "ÃˆÂ¸");
         string firstCardImage 
             = firstCard.transform.Find("front").GetComponent<SpriteRenderer>().sprite.name;
         string secondCardImage 
