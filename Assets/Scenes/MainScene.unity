@@ -420,13 +420,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 70
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC810\uC218 : 0"
+  m_Text: "\uC810\uC218 :"
 --- !u!1 &1221618572
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,7 +774,6 @@ MonoBehaviour:
   finalScoreTxt: {fileID: 1883667111}
   finalscoreTxt: {fileID: 1883667115}
   anim: {fileID: 1335207697}
-  timePlus: {fileID: 1335207691}
   time: 0
 --- !u!82 &1514901534
 AudioSource:

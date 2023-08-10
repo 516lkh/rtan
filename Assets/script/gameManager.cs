@@ -69,14 +69,7 @@ public class gameManager : MonoBehaviour
         time += Time.deltaTime;
         timeTxt.text = time.ToString("N2");
         score = (60 - time) / matchNum;
-        if (matchNum == 0)
-        {
-            scoreTxt.text = ("Á¡¼ö : 0");
-        }
-        else
-        {
-            scoreTxt.text = ("Á¡¼ö : " + score.ToString());
-        }
+        
 
         if (time > 60.0f)
         {
@@ -92,7 +85,7 @@ public class gameManager : MonoBehaviour
     {
         isClick = false;
         matchNum += 1;
-        matchNumTxt.text = ("¸ÅÄ¡È½¼ö " + matchNum.ToString() + "È¸");
+        matchNumTxt.text = ("매치횟수" + matchNum.ToString() + "회");
         string firstCardImage 
             = firstCard.transform.Find("front").GetComponent<SpriteRenderer>().sprite.name;
         string secondCardImage 
@@ -108,12 +101,14 @@ public class gameManager : MonoBehaviour
             Debug.Log(cardsLeft);
             if (cardsLeft == 0)
             {
-                finalscoreTxt.text=scoreTxt.text;
                 backgroundMusic.Pause();
                 winSound.Play();
                 endTxt.SetActive(true);
                 finalScoreTxt.SetActive(true);
                 Time.timeScale = 0.0f;
+
+                scoreTxt.text = ("점수: " + score.ToString("N2"));
+                finalscoreTxt.text = scoreTxt.text;
             }
         }
         else
