@@ -17,6 +17,7 @@ public class gameManager : MonoBehaviour
     public Text timeTxt;
     public GameObject card;
     public GameObject endTxt;
+    public GameObject failTxt;
     public GameObject firstCard;
     public GameObject secondCard;
 
@@ -58,7 +59,7 @@ public class gameManager : MonoBehaviour
 
         if (time > 30.0f)
         {
-            endTxt.SetActive(true);
+            failTxt.SetActive(true);
             Time.timeScale = 0.0f;
         }
     }
