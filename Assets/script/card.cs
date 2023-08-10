@@ -6,6 +6,9 @@ public class card : MonoBehaviour
 {
     public Animator anim;
 
+    public AudioSource audioSource;
+    public SpriteRenderer backColor;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,10 +38,25 @@ public class card : MonoBehaviour
                 gameManager.I.secondCard = gameObject;
                 gameManager.I.isMatched();
             }
+            audioSource.Play();
+            anim.SetBool("isOpen", true);
+            transform.Find("front").gameObject.SetActive(true);
+            transform.Find("back").gameObject.SetActive(false);
+
+            backColor.color = new Color(168 / 255f, 168 / 255f, 168 / 255f, 255);
+
+            if (gameManager.I.firstCard == null)
+            {
+                gameManager.I.firstCard = gameObject;
+            }
+            else
+            {
+                gameManager.I.secondCard = gameObject;
+                gameManager.I.isMatched();
+            }
         }
+
     }
-
-
 
 
     public void destroyCard()

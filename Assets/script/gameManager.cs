@@ -20,6 +20,9 @@ public class gameManager : MonoBehaviour
     public GameObject failTxt;
     public GameObject firstCard;
     public GameObject secondCard;
+    public AudioSource backgroundMusic;
+    public AudioSource winSound;
+    public AudioSource failSound;
 
     public bool isClick = true;
     public Text matchNumTxt;
@@ -33,6 +36,7 @@ public class gameManager : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1f;
+        backgroundMusic.Play();
 
         int[] rtans = { 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7 };
 
@@ -63,8 +67,11 @@ public class gameManager : MonoBehaviour
 
         if (time > 30.0f)
         {
+            backgroundMusic.Pause();
             failTxt.SetActive(true);
             Time.timeScale = 0.0f;
+            time = 0;
+            failSound.Play();
         }
     }
 
@@ -88,6 +95,8 @@ public class gameManager : MonoBehaviour
             Debug.Log(cardsLeft);
             if (cardsLeft == 0)
             {
+                backgroundMusic.Pause();
+                winSound.Play();
                 endTxt.SetActive(true);
                 Time.timeScale = 0.0f;
             }
