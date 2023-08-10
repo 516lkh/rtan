@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class timeTxt : MonoBehaviour
 {
-    float time = 0.0f;
     float x;
     float y;
     // Start is called before the first frame update
@@ -18,29 +17,32 @@ public class timeTxt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
 
-
-        if(time < 10f)
+        if(gameManager.I.time < 10f)
         {
 
         }
-        else if (time < 20f)
+        else if (gameManager.I.time < 20f)
         {
             GetComponent<RectTransform>().position
                 = new Vector3(x + Random.Range(-1, 1), y + Random.Range(-1, 1), 0);
         }
-        else if (time < 30f)
+        else if (gameManager.I.time < 30f)
         {
             GetComponent<RectTransform>().position
                 = new Vector3(x + Random.Range(-3, 3), y + Random.Range(-3, 3), 0);
         }
-        else if (time < 40f)
+        else if (gameManager.I.time < 40f)
         {
             GetComponent<RectTransform>().position
                 = new Vector3(x + Random.Range(-5, 5), y + Random.Range(-5, 5), 0);
         }
-        else if (time < 50f)
+        else if (gameManager.I.time < 50f)
+        {
+            GetComponent<RectTransform>().position
+                = new Vector3(x + Random.Range(-7, 7), y + Random.Range(-7, 7), 0);
+        }
+        else if (gameManager.I.time < 60f)
         {
             GetComponent<RectTransform>().position
                 = new Vector3(x + Random.Range(-10, 10), y + Random.Range(-10, 10), 0);

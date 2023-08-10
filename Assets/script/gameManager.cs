@@ -30,7 +30,7 @@ public class gameManager : MonoBehaviour
     public GameObject timePlus;
 
 
-    float time = 0.0f;
+    public float time = 0.0f;
     int cardsLeft;
 
     // Start is called before the first frame update
