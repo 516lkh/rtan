@@ -20,6 +20,7 @@ public class timeTxt : MonoBehaviour
     {
         time += Time.deltaTime;
 
+
         if(time < 10f)
         {
 
