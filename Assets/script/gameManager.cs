@@ -32,7 +32,6 @@ public class gameManager : MonoBehaviour
 
     public Animator anim;
 
-    float time = 0.0f;
     float score;
     public float time = 0.0f;
     int cardsLeft;
