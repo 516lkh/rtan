@@ -12,7 +12,7 @@ public class card : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -27,6 +27,9 @@ public class card : MonoBehaviour
         {
             audioSource.Play();
             anim.SetBool("isOpen", true);
+            anim.SetBool("isFlip", true);
+            Invoke("closeflip", 0.14f);
+
             transform.Find("front").gameObject.SetActive(true);
             transform.Find("back").gameObject.SetActive(false);
 
@@ -41,6 +44,7 @@ public class card : MonoBehaviour
                 gameManager.I.secondCard = gameObject;
                 gameManager.I.isMatched();
             }
+
         }
 
     }
@@ -67,11 +71,21 @@ public class card : MonoBehaviour
 
     void closeCardInvoke()
     {
+        anim.SetBool("isFlip", true);
         anim.SetBool("isOpen", false);
         transform.Find("back").gameObject.SetActive(true);
         transform.Find("front").gameObject.SetActive(false);
         gameManager.I.timePlus.SetActive(false);
+        Invoke("closeflip", 0.14f);
         gameManager.I.isClick = true;
     }
+
+
+    void closeflip()
+    {
+        anim.SetBool("isFlip", false);
+    }
+
+
 
 }
