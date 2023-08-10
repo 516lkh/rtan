@@ -27,6 +27,7 @@ public class gameManager : MonoBehaviour
     public bool isClick = true;
     public Text matchNumTxt;
     private int matchNum = 0;
+    public GameObject timePlus;
 
 
     float time = 0.0f;
@@ -103,6 +104,8 @@ public class gameManager : MonoBehaviour
         }
         else
         {
+            time += 1;
+            timePlus.SetActive(true);
             firstCard.GetComponent<card>().closeCard();
             secondCard.GetComponent<card>().closeCard();
         }
