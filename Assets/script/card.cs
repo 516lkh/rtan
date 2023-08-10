@@ -28,7 +28,7 @@ public class card : MonoBehaviour
             audioSource.Play();
             anim.SetBool("isOpen", true);
             anim.SetBool("isFlip", true);
-            Invoke("closeflip", 0.14f);
+            Invoke("closeflip", 0.15f);
 
             transform.Find("front").gameObject.SetActive(true);
             transform.Find("back").gameObject.SetActive(false);
@@ -76,7 +76,7 @@ public class card : MonoBehaviour
         transform.Find("back").gameObject.SetActive(true);
         transform.Find("front").gameObject.SetActive(false);
         gameManager.I.timePlus.SetActive(false);
-        Invoke("closeflip", 0.14f);
+        Invoke("closeflip", 0.15f);
         gameManager.I.isClick = true;
     }
 
