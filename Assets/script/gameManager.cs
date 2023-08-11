@@ -22,6 +22,8 @@ public class gameManager : MonoBehaviour
     public AudioSource backgroundMusic;
     public AudioSource winSound;
     public AudioSource failSound;
+    public AudioSource matchfail;
+    public AudioSource matchsuccess;
 
     public bool isClick = true;
     public Text matchNumTxt;
@@ -93,6 +95,7 @@ public class gameManager : MonoBehaviour
 
         if (firstCardImage == secondCardImage)
         {
+            matchsuccess.Play();
             firstCard.GetComponent<card>().destroyCard();
             secondCard.GetComponent<card>().destroyCard();
 
@@ -114,6 +117,7 @@ public class gameManager : MonoBehaviour
         else
         {
             time += 1;
+            matchfail.Play();
             anim.SetTrigger("timePlus");
             firstCard.GetComponent<card>().closeCard();
             secondCard.GetComponent<card>().closeCard();
