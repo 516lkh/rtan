@@ -242,6 +242,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -316,6 +317,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &519420033
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1267f23d600c76140b4f71b52a54ce16, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &722053753
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,6 +800,7 @@ MonoBehaviour:
   finalScoreTxt: {fileID: 1883667111}
   finalscoreTxt: {fileID: 1883667115}
   anim: {fileID: 1335207697}
+  wrong: {fileID: 519420033}
   time: 0
 --- !u!82 &1514901534
 AudioSource:
@@ -791,7 +814,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: db33f74663ab1ea4bb03dc3775e3c03c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.09
+  m_Volume: 0.07
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -887,7 +910,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c8cdd618c22fa3442b17bd1702a000c4, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.124
+  m_Volume: 0.104
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -983,7 +1006,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 44ea80b7a352873498333ac4b44872ed, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.171
+  m_Volume: 0.151
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1321,7 +1344,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 100
+    m_FontSize: 200
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -1332,7 +1355,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC7A5\uD604\uAD50 \uC131\uACF5!\n\uC774\uACBD\uD604 \uC131\uACF5!"
+  m_Text: "\uC131\uACF5!"
 --- !u!222 &1657102803
 CanvasRenderer:
   m_ObjectHideFlags: 0

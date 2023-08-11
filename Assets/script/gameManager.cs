@@ -24,6 +24,7 @@ public class gameManager : MonoBehaviour
     public AudioSource failSound;
     public AudioSource matchfail;
     public AudioSource matchsuccess;
+    
 
     public bool isClick = true;
     public Text matchNumTxt;
@@ -33,6 +34,7 @@ public class gameManager : MonoBehaviour
     public Text finalscoreTxt;
 
     public Animator anim;
+    public Animator wrong;
 
     float score;
     public float time = 0.0f;
@@ -117,15 +119,22 @@ public class gameManager : MonoBehaviour
         else
         {
             time += 1;
+            wrong.SetBool("isWrong", true);
             matchfail.Play();
             anim.SetTrigger("timePlus");
             firstCard.GetComponent<card>().closeCard();
             secondCard.GetComponent<card>().closeCard();
+            Invoke("isWrong", 1f);
         }
 
         firstCard = null;
         secondCard = null;
 
+    }
+
+    public void isWrong()
+    {
+        wrong.SetBool("isWrong", false);
     }
 
 }
