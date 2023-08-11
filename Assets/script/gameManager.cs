@@ -71,7 +71,7 @@ public class gameManager : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        timeTxt.text = time.ToString("N2");
+        timeTxt.text = (60-time).ToString("N2");
         score = (60 - time) / matchNum;
         
 
